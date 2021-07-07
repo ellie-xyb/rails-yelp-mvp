@@ -11,3 +11,37 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "restaurants.scss";
+
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+.navbar {
+  background-color: #FFE194;
+  color: #4C4C6D;
+  padding: 8px 15px;
+  margin-bottom: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar i {
+  font-size: 2em;
+}
+
+body {
+  background-color: #E8F6EF;
+  text-align: center;
+}

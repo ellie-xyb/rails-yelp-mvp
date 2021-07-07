@@ -1,0 +1,10 @@
+<h1 style="color: #FF7600;" class='my-4'>Restaurants</h1>
+<% @restaurants.each do |restaurant| %>
+  <div class="show-list">
+    <a href="<%= restaurant_path(restaurant) %>" class="list-title" style="text-decoration: none;"><%= restaurant.name %></a>
+    <div class="list-content">
+      <p><%= restaurant.address %></p>
+      <h4 style="color:grey"><%= restaurant.category %></h4>
+    </div>
+  </div>
+<% end %>
