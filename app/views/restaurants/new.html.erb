@@ -1,2 +1,12 @@
 <h1>Add a New Restaurant</h1>
-<%= render "form", restaurant: @restaurant %>
+<div class="container mb-3">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= render "form", restaurant: @restaurant %>
+    </div>
+  </div>
+</div>
+<br>
+<a class="btn btn-info" href="<%= restaurants_path %>">Back</a>
+
+
