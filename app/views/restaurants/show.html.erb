@@ -2,13 +2,35 @@
 <h3><%= @restaurant.category %></h3>
 <p><%= @restaurant.address %></p>
 <p><em><%= @restaurant.phone_number %></em></p>
-<a class="btn btn-outline-danger" href="<%= new_restaurant_review_path(@restaurant) %>">Write a Review</a>
 <br>
 <a class="btn btn-info mt-3" href="<%= restaurants_path %>">Home</a>
 <hr>
-<% if @restaurant.reviews.present? %>
-  <% @restaurant.reviews.each do |review| %>
-    <h2 style="color:red"><%= review.rating %></h1>
-    <p style="color:grey"><%= review.content %></p>
-  <% end %>
-<% end %>
+<div class="container mb-3">
+  <div class="list-group my-3">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item">
+        <small>
+          <% count = 0 %>
+          <% 5.times do %>
+            <% if review.rating > count %>
+              <i class="fas fa-star"></i>
+            <% else %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <% count += 1 %>
+          <% end %>
+        </small>
+        <p><%= review.content %></p>
+      </li>
+    <% end %>
+    </div>
+    <%= simple_form_for [@restaurant, @review] do |f| %>
+      <%= f.input :rating, collection: 0..5 %>
+      <%= f.input :content %>
+      <%= f.submit class: 'btn btn-primary my-3' %>
+    <% end %>
+    <%= link_to "See all restaurants", restaurants_path %>
+    </div>
+  </div>
+</div>
+
